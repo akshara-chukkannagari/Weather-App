@@ -1,16 +1,17 @@
 <template>
     <section>
-        <img class="weather__icon" :src="icon" :alt="description">
+        <img class="weather__icon" :src="forecast.weatherIcon" :alt="forecast.description">
         <div class="weather__temperature">
-            <div class="weather__description">{{ description }}</div>
-            <div class="temperature__range">{{ high }}&deg;/{{ low }}&deg;</div>      
-            <div class="temperature__value">{{ value }}&deg;</div>
+            <div class="weather__description">{{ forecast.description }}</div>
+            <div class="temperature__range">{{ forecast.temperatureHigh }}&deg;/{{ forecast.temperatureLow }}&deg;</div>      
+            <div class="temperature__value">{{ forecast.temperatureValue }}&deg;</div>
         </div>
         <div class="location__day__date">
-            <div class="location">{{ location }}</div>
-            <div class="day"> {{ day }} </div>
-            <div class="date"> {{ date }} </div>
+            <div class="location">{{ forecast.location }}</div>
+            <div class="day"> {{ forecast.day }} </div>
+            <div class="date"> {{ forecast.date }} </div>
         </div>
+        
     </section>
 </template>
 
@@ -21,37 +22,8 @@ export default {
     props: {
         isSelected: Number,
         index: Number,
-        location: {
-            type: String,
-            required: true
-        },
-        description: {
-            type: String,
-            required: true
-        },
-        icon: {
-            type: String,
-            required: true
-        },
-        value: {
-            type: Number,
-            required: true
-        },
-        high: {
-            type: Number,
-            required: true
-        },
-        low: {
-            type: Number,
-            required: true
-        },
-        day: {
-            type: String,
-            required: true
-        },
-        date: {
-            type: String,
-            required: true
+        forecast: {
+            type: Object
         }
     },
     computed: {

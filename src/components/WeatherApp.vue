@@ -2,14 +2,7 @@
     <main>
     <div class="conatiner">
         <WeatherDetails
-            :location="this.forecast.location"
-            :description="this.forecast.description"
-            :icon="this.forecast.weatherIcon"
-            :value="this.forecast.temperatureValue"
-            :high="this.forecast.temperatureHigh"
-            :low="this.forecast.temperatureLow"
-            :day="this.forecast.day"
-            :date="this.forecast.date"
+            :forecast="this.forecast"
         ></WeatherDetails>
         <WeatherItems
             :icon="this.forecast.weatherIcon"
